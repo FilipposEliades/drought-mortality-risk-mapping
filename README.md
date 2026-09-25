@@ -24,10 +24,10 @@ In 2025, two independent mortality sites appeared in Cyprus. Both fell inside zo
 
 The method combines four components:
 
-- **Physiographic similarity** — quantile envelopes (0.05–0.95) for slope, multi-scale topographic position (TPI 300 m / 1000 m) and curvature, combined under a majority rule (≥60% of criteria)
+- **Physiographic similarity** - quantile envelopes (0.05–0.95) for slope, multi-scale topographic position (TPI 300 m / 1000 m) and curvature, combined under a majority rule (≥60% of criteria)
 - **Exposure constraints** — circular aspect windows, warm-season solar loading (April–September), and lithology filtering
-- **Drought gate** — SPEI-12 ≤ −1.4
-- **Spectral collapse** — Landsat event-year decline (NBR / NDVI) against a fixed 3-year pre-event baseline, with a year+1 persistence rule to suppress transient stress
+- **Drought gate** - SPEI-12 ≤ −1.4
+- **Spectral collapse** - Landsat event-year decline (NBR / NDVI) against a fixed 3-year pre-event baseline, with a year+1 persistence rule to suppress transient stress
 
 Outputs are STRICT/RELAX resemblance masks and a kernel-density HEAT intensity surface (0–1) for polygon-level risk scoring.
 
