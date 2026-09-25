@@ -1,3 +1,5 @@
+/***** AOI *****/
+
 // 3 AOI
 var area1FC = ee.FeatureCollection('users/filipposeliades31/Akamas');
 var area2FC = ee.FeatureCollection('users/filipposeliades31/Stavrovouni');
@@ -928,13 +930,6 @@ var MIN_DROP_NDVI_A3 = meanInTruth(DROP_NDVI_A3, gArea3, A3_mortMask, 'Area3 [ND
 WE_MIN_DROP_NBR  = ee.Number(MIN_DROP_NBR_A1).add(MIN_DROP_NBR_A2).divide(2);
 WE_MIN_DROP_NDVI = ee.Number(MIN_DROP_NDVI_A3);
 
-// Leave-one-AOI-out//
-//WE_MIN_DROP_NBR  = ee.Number(MIN_DROP_NBR_A2); 
-//WE_MIN_DROP_NDVI = ee.Number(MIN_DROP_NDVI_A3);
-
-//WE_MIN_DROP_NBR  = ee.Number(MIN_DROP_NBR_A1); 
-//WE_MIN_DROP_NDVI = ee.Number(MIN_DROP_NDVI_A3); 
-
 // --- Event delta thresholds from truth 
 var EVT_DELTA_NBR_A1  = meanInTruth(DELTA_NBR_EVT_A1,  gArea1, A1_mortMask, 'Area1 [NBR DELTA evt]');
 var EVT_DELTA_NBR_A2  = meanInTruth(DELTA_NBR_EVT_A2,  gArea2, A2_mortMask, 'Area2 [NBR DELTA evt]');
@@ -981,9 +976,6 @@ print('========================================================================'
 // - Persistence = “negative trend” => DELTA_post1 < 0
 //   + optional knob: PERSIST_DELTA_FRAC (0 => only <0)
 // ============================================================
-
-/***** RELAX PERCENTAGE *****/
-var MAJORITY_FACTOR = 0.6; // 
 
 // Topographic toggles
 var USE_TOPO     = true;
@@ -1032,7 +1024,7 @@ N.eq(0),
 ee.Image(1).rename('b').toByte(),
 (function(){
 var sum  = coll.sum();
-var need = ee.Number(N).multiply(MAJORITY_FACTOR).ceil(); // 60% majority
+var need = ee.Number(N).multiply(0.6).ceil(); // 60% majority
 return ee.Image(ee.Algorithms.If(
 rule === 'AND', sum.eq(N), sum.gte(need)
 )).rename('b').toByte();
