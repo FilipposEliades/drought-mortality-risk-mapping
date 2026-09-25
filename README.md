@@ -55,6 +55,6 @@ Released under **CC BY-NC 4.0** — free to use and adapt for non-commercial pur
 ## Contact
 
 Dr. Filippos Eliades
-filippos.eliades@gmail.com · [LinkedIn](https://www.linkedin.com/in/filippos-eliades)
+filippos.eliades@gmail.com · [LinkedIn](https://www.linkedin.com/in/filippos-%CE%B5liades-381627134/))
 
 *Available for consultancy on forest mortality risk mapping in Mediterranean and semi-arid ecosystems.*
